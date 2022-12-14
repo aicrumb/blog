@@ -68,7 +68,7 @@ Learn more about tokenizers and how to build them in the [Hugging Face course](h
 See that inconspicuous `streaming=True` argument? This small change has a big impact: instead of downloading the full (50GB) dataset this will stream individual samples as needed saving a lot of disk space! Checkout the [Hugging Face course](https://huggingface.co/course/chapter5/4?fw=pt
 ) for more information on streaming.
 
-Now, we initialize a new model. We’ll use the same hyperparameters as GPT-2 large (1.5B parameters) and adjust the embedding layer to fit our new tokenizer also adding some stability tweaks. The `scale_attn_by_layer_idx` flag makes sure we scale the attention by the layer id and `reorder_and_upcast_attn` mainly makes sure that we compute the attention in full precision to avoid numerical issues. We push the freshly initialized model to the same repo as the tokenizer.
+Now, we initialize a new model. We’ll use the same hyperparameters as GPT-2 large (774M parameters) and adjust the embedding layer to fit our new tokenizer also adding some stability tweaks. The `scale_attn_by_layer_idx` flag makes sure we scale the attention by the layer id and `reorder_and_upcast_attn` mainly makes sure that we compute the attention in full precision to avoid numerical issues. We push the freshly initialized model to the same repo as the tokenizer.
 
 ```Python
 # Load codeparrot tokenizer trained for Python code tokenization
